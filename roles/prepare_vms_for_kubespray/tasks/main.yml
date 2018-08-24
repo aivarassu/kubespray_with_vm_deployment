@@ -1,0 +1,40 @@
+---
+
+#disable SELinux a
+- name: disable SELinux 1
+  command: |
+    setenforce 0
+
+- name: disable SELinux 2
+  command: |
+    sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+
+#disable swap
+- name: disable swap
+  command: | 
+    swapoff -a
+- name: disable swap2
+  command: |
+    sed -e '/swap/ s/^#*/#/' -i /etc/fstab
+
+#Enable br_netfilter
+- name: enable br_netfilter
+  command: | 
+    modprobe br_netfilter
+
+- name: enable br_netfilter 2
+  command: |
+    echo "1" > /proc/sys/net/bridge/bridge-nf-call-iptables
+
+#enable ip forwarding
+- name: enable ip forwarding
+  command: echo "1" >> /proc/sys/net/ipv4/ip_forward
+
+#disable firewalld service
+- name: disable firewalld service
+  service:
+    name: firewalld
+    state: stopped
+    enabled: no
+
+- setup:

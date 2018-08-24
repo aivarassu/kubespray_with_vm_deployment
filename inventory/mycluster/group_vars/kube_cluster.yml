@@ -1,0 +1,26 @@
+---
+#Usual VMware guest deployment variables for example_group group
+vsphere_host: "192.168.54.1"
+vsphere_user: "root"
+vsphere_password: "H3lionCS"
+vsphere_datacenter: "dc"
+vsphere_folder: "/"
+guest_network: VLAN_504_H_CONF_PXE
+guest_netmask: 255.255.255.0
+guest_gateway: 192.168.54.254
+guest_dns_server: 8.8.8.8
+guest_domain_name: testas
+guest_id: centos64Guest
+guest_memory: 2048
+guest_vcpu: 2
+guest_template: misc_centos7
+#guest_template: kube_centos7_tmpl
+esxi_host: 192.168.54.12
+notes: "Deployed with ansible"
+vm_disk_size: 150
+vsphere_datastore: 'RVT_cloudsystem_02'
+ansible_host_group: kube_cluster
+# python -c 'import crypt; print crypt.crypt("This is my Password", "$1$SomeSalt$")'
+ansible_connection: ssh
+ansible_ssh_user: root
+ansible_ssh_pass: misccloud
