@@ -1,3 +1,33 @@
+This is project of kubespray with additional vmware support to automatically deploy VM's for kubernetes cluster from existing vmware  template. In this project we added few ansible roles and additional variables in all.yml which allows automatic vm deployment in vSphere.
+
+Additional varialbles
+-----------
+
+- vsphere_host
+- vsphere_user
+- vsphere_password
+- vsphere_datacenter
+- vsphere_folder
+- guest_network
+- guest_netmask
+- guest_gateway
+- guest_dns_server
+- guest_domain_name
+- guest_id
+- guest_memory
+- guest_vcpu
+- guest_template
+- esxi_host
+- vm_disk_size
+- vsphere_datastore
+
+
+
+Original kubespray project :
+https://github.com/kubernetes-incubator/kubespray
+
+
+
 ![Kubernetes Logo](https://raw.githubusercontent.com/kubernetes-incubator/kubespray/master/docs/img/kubernetes-logo.png)
 
 Deploy a Production Ready Kubernetes Cluster
