@@ -1,6 +1,6 @@
 This is project of kubespray with additional vmware support to automatically deploy VM's for kubernetes cluster from existing vmware  template. In this project we added few ansible roles and additional variables in all.yml which allows automatic vm deployment in vSphere.
 
-Additional varialbles
+Additional variables
 -----------
 
 - vsphere_host
