@@ -1,8 +1,8 @@
 ---
 #Usual VMware guest deployment variables for example_group group
 vsphere_host: "192.168.54.1"
-vsphere_user: "root"
-vsphere_password: "H3lionCS"
+vsphere_user: ""
+vsphere_password: ""
 vsphere_datacenter: "dc"
 vsphere_folder: "/"
 guest_network: VLAN_504_H_CONF_PXE
@@ -23,4 +23,4 @@ ansible_host_group: kube_cluster
 # python -c 'import crypt; print crypt.crypt("This is my Password", "$1$SomeSalt$")'
 ansible_connection: ssh
 ansible_ssh_user: root
-ansible_ssh_pass: misccloud
+ansible_ssh_pass: 
